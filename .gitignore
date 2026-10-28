@@ -112,3 +112,11 @@ InitTestScene*.unity*
 
 # Auto-generated cache in Assets folder
 /[Aa]ssets/[Ss]ceneDependencyCache*
+
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Resultados de entrenamiento ML-Agents (opcional, si pesan mucho)
+results/

@@ -67,5 +67,6 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "ProyectoTurtlebot.slnx"
+    "dotnet.defaultSolution": "ProyectoTurtlebot.slnx",
+    "git.ignoreLimitWarning": true
 }
