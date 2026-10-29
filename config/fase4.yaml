@@ -1,0 +1,91 @@
+behaviors:
+  # IMPORTANTE: este nombre debe ser IGUAL al "Behavior Name" de Behavior Parameters en Unity
+  TurtleBot:
+    trainer_type: ppo
+    hyperparameters:
+      batch_size: 1024
+      buffer_size: 10240
+      learning_rate: 3.0e-4
+      beta: 5.0e-3
+      epsilon: 0.2
+      lambd: 0.95
+      num_epoch: 3
+      learning_rate_schedule: linear
+    network_settings:
+      normalize: true
+      hidden_units: 256
+      num_layers: 2
+    reward_signals:
+      extrinsic:
+        gamma: 0.99
+        strength: 1.0
+    max_steps: 5000000
+    time_horizon: 128
+    summary_freq: 20000
+    keep_checkpoints: 5
+    checkpoint_interval: 100000
+
+environment_parameters:
+  # Distancia mínima de la meta al robot (fija en todas las fases)
+  goal_min_dist: 1.5
+
+  # Distancia máxima: va subiendo cuando el robot rinde bien en la fase actual
+  goal_max_dist:
+    curriculum:
+      - name: Cerca
+        completion_criteria:
+          measure: reward
+          behavior: TurtleBot
+          signal_smoothing: true
+          min_lesson_length: 500
+          threshold: 1.8
+        value: 3.0
+      - name: Media
+        completion_criteria:
+          measure: reward
+          behavior: TurtleBot
+          signal_smoothing: true
+          min_lesson_length: 500
+          threshold: 1.8
+        value: 6.0
+      - name: Lejos
+        completion_criteria:
+          measure: reward
+          behavior: TurtleBot
+          signal_smoothing: true
+          min_lesson_length: 500
+          threshold: 1.8
+        value: 10.0
+      - name: Mapa_completo
+        value: 30.0
+
+  # Vista libre hacia la meta: activa (1) al principio, desactivada (0) cuando ya es capaz
+  # Debe llevar los mismos criterios que goal_max_dist para que cambien a la vez
+  goal_line_of_sight:
+    curriculum:
+      - name: ConVista
+        completion_criteria:
+          measure: reward
+          behavior: TurtleBot
+          signal_smoothing: true
+          min_lesson_length: 500
+          threshold: 1.8
+        value: 1.0
+      - name: ConVista2
+        completion_criteria:
+          measure: reward
+          behavior: TurtleBot
+          signal_smoothing: true
+          min_lesson_length: 500
+          threshold: 1.8
+        value: 1.0
+      - name: SinVista
+        completion_criteria:
+          measure: reward
+          behavior: TurtleBot
+          signal_smoothing: true
+          min_lesson_length: 500
+          threshold: 1.8
+        value: 0.0
+      - name: SinVista2
+        value: 0.0

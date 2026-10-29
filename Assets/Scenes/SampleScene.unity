@@ -260,6 +260,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 65280180912531999, guid: e0b32a0a8e04d4a40906e3f994b26f67, type: 3}
   m_PrefabInstance: {fileID: 8427805}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &8427809 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5455174435505249668, guid: e0b32a0a8e04d4a40906e3f994b26f67, type: 3}
+  m_PrefabInstance: {fileID: 8427805}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &99962948
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,13 +409,26 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 2000
+  MaxStep: 3000
   startPoint: {fileID: 8427807}
   goalPoint: {fileID: 8427806}
+  floor: {fileID: 8427809}
   moveSpeed: 1.5
   turnSpeed: 150
   maxDistance: 30
   randomStartYaw: 60
+  minGoalDistance: 1.5
+  maxGoalDistance: 3
+  requireLineOfSight: 1
+  wallMargin: 0.4
+  goalClearRadius: 0.3
+  obstacleTag: Obstacle
+  progressReward: 0.1
+  goalReward: 2
+  collisionPenalty: 0.5
+  stepPenalty: 0.0005
+  spinPenalty: 0.003
+  forwardBonus: 0.0005
 --- !u!114 &106370555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -481,7 +499,7 @@ MonoBehaviour:
   m_Model: {fileID: 0}
   m_InferenceDevice: 0
   m_BehaviorType: 0
-  m_BehaviorName: TurtleBotLearning
+  m_BehaviorName: TurtleBot
   TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
@@ -802,13 +820,26 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 2000
+  MaxStep: 3000
   startPoint: {fileID: 929951772}
   goalPoint: {fileID: 929951771}
+  floor: {fileID: 929951774}
   moveSpeed: 1.5
   turnSpeed: 150
   maxDistance: 30
   randomStartYaw: 60
+  minGoalDistance: 1.5
+  maxGoalDistance: 3
+  requireLineOfSight: 1
+  wallMargin: 0.4
+  goalClearRadius: 0.3
+  obstacleTag: Obstacle
+  progressReward: 0.1
+  goalReward: 2
+  collisionPenalty: 0.5
+  stepPenalty: 0.0005
+  spinPenalty: 0.003
+  forwardBonus: 0.0005
 --- !u!114 &292393010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -879,7 +910,7 @@ MonoBehaviour:
   m_Model: {fileID: 0}
   m_InferenceDevice: 0
   m_BehaviorType: 0
-  m_BehaviorName: TurtleBotLearning
+  m_BehaviorName: TurtleBot
   TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
@@ -1110,8 +1141,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.6333008, y: 0.0012198687, z: -0.0008699633, w: 0.7739044}
-  m_LocalPosition: {x: -12.250273, y: 9.898652, z: -18.223326}
+  m_LocalRotation: {x: 0.69942105, y: -0.0034304804, z: 0.0033576468, w: 0.7146938}
+  m_LocalPosition: {x: 3.301875, y: 23.89912, z: 0.93238866}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1312,6 +1343,11 @@ Transform:
 --- !u!4 &381102043 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 65280180912531999, guid: e0b32a0a8e04d4a40906e3f994b26f67, type: 3}
+  m_PrefabInstance: {fileID: 381102040}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &381102044 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5455174435505249668, guid: e0b32a0a8e04d4a40906e3f994b26f67, type: 3}
   m_PrefabInstance: {fileID: 381102040}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &399598405
@@ -1795,6 +1831,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 65280180912531999, guid: e0b32a0a8e04d4a40906e3f994b26f67, type: 3}
   m_PrefabInstance: {fileID: 578924749}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &578924753 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5455174435505249668, guid: e0b32a0a8e04d4a40906e3f994b26f67, type: 3}
+  m_PrefabInstance: {fileID: 578924749}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &606047586 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2850734308929666554, guid: e0b32a0a8e04d4a40906e3f994b26f67, type: 3}
@@ -2039,13 +2080,26 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 2000
+  MaxStep: 3000
   startPoint: {fileID: 578924751}
   goalPoint: {fileID: 578924750}
+  floor: {fileID: 578924753}
   moveSpeed: 1.5
   turnSpeed: 150
   maxDistance: 30
   randomStartYaw: 60
+  minGoalDistance: 1.5
+  maxGoalDistance: 3
+  requireLineOfSight: 1
+  wallMargin: 0.4
+  goalClearRadius: 0.3
+  obstacleTag: Obstacle
+  progressReward: 0.1
+  goalReward: 2
+  collisionPenalty: 0.5
+  stepPenalty: 0.0005
+  spinPenalty: 0.003
+  forwardBonus: 0.0005
 --- !u!114 &707600751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2116,7 +2170,7 @@ MonoBehaviour:
   m_Model: {fileID: 0}
   m_InferenceDevice: 0
   m_BehaviorType: 0
-  m_BehaviorName: TurtleBotLearning
+  m_BehaviorName: TurtleBot
   TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
@@ -2516,6 +2570,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 65280180912531999, guid: e0b32a0a8e04d4a40906e3f994b26f67, type: 3}
   m_PrefabInstance: {fileID: 929951770}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &929951774 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5455174435505249668, guid: e0b32a0a8e04d4a40906e3f994b26f67, type: 3}
+  m_PrefabInstance: {fileID: 929951770}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &966785563
 GameObject:
   m_ObjectHideFlags: 0
@@ -2690,6 +2749,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 65280180912531999, guid: e0b32a0a8e04d4a40906e3f994b26f67, type: 3}
   m_PrefabInstance: {fileID: 1084555354}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1084555358 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5455174435505249668, guid: e0b32a0a8e04d4a40906e3f994b26f67, type: 3}
+  m_PrefabInstance: {fileID: 1084555354}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1148586919
 GameObject:
   m_ObjectHideFlags: 0
@@ -2779,10 +2843,10 @@ MonoBehaviour:
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
     hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 5022602860645237092, guid: bd85494c8d7d59f4db7c78bd54cc725f, type: 3}
+  m_Model: {fileID: 0}
   m_InferenceDevice: 0
   m_BehaviorType: 0
-  m_BehaviorName: TurtleBotLearning
+  m_BehaviorName: TurtleBot
   TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
@@ -2868,13 +2932,26 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 2000
+  MaxStep: 3000
   startPoint: {fileID: 606047586}
   goalPoint: {fileID: 1620326591}
+  floor: {fileID: 1407811873}
   moveSpeed: 1.5
   turnSpeed: 150
   maxDistance: 30
   randomStartYaw: 60
+  minGoalDistance: 1.5
+  maxGoalDistance: 30
+  requireLineOfSight: 0
+  wallMargin: 0.4
+  goalClearRadius: 0.3
+  obstacleTag: Obstacle
+  progressReward: 0.1
+  goalReward: 2
+  collisionPenalty: 0.5
+  stepPenalty: 0.0005
+  spinPenalty: 0.003
+  forwardBonus: 0.0005
 --- !u!1001 &1255064343
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3014,6 +3091,11 @@ Transform:
 --- !u!4 &1255064346 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 65280180912531999, guid: e0b32a0a8e04d4a40906e3f994b26f67, type: 3}
+  m_PrefabInstance: {fileID: 1255064343}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1255064347 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5455174435505249668, guid: e0b32a0a8e04d4a40906e3f994b26f67, type: 3}
   m_PrefabInstance: {fileID: 1255064343}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1304310492
@@ -3190,6 +3272,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 65280180912531999, guid: e0b32a0a8e04d4a40906e3f994b26f67, type: 3}
   m_PrefabInstance: {fileID: 1308812066}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1308812070 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5455174435505249668, guid: e0b32a0a8e04d4a40906e3f994b26f67, type: 3}
+  m_PrefabInstance: {fileID: 1308812066}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1365879039
 GameObject:
   m_ObjectHideFlags: 0
@@ -3244,13 +3331,26 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 2000
+  MaxStep: 3000
   startPoint: {fileID: 1255064345}
   goalPoint: {fileID: 1255064344}
+  floor: {fileID: 1255064347}
   moveSpeed: 1.5
   turnSpeed: 150
   maxDistance: 30
   randomStartYaw: 60
+  minGoalDistance: 1.5
+  maxGoalDistance: 3
+  requireLineOfSight: 1
+  wallMargin: 0.4
+  goalClearRadius: 0.3
+  obstacleTag: Obstacle
+  progressReward: 0.1
+  goalReward: 2
+  collisionPenalty: 0.5
+  stepPenalty: 0.0005
+  spinPenalty: 0.003
+  forwardBonus: 0.0005
 --- !u!114 &1365879042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3318,10 +3418,10 @@ MonoBehaviour:
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
     hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 5022602860645237092, guid: 8ef5fe00da366b64d9f799dac37514b5, type: 3}
+  m_Model: {fileID: 0}
   m_InferenceDevice: 0
   m_BehaviorType: 0
-  m_BehaviorName: TurtleBotLearning
+  m_BehaviorName: TurtleBot
   TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
@@ -3501,6 +3601,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0b32a0a8e04d4a40906e3f994b26f67, type: 3}
+--- !u!4 &1407811873 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5455174435505249668, guid: e0b32a0a8e04d4a40906e3f994b26f67, type: 3}
+  m_PrefabInstance: {fileID: 1407811872}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1471950684
 GameObject:
   m_ObjectHideFlags: 0
@@ -3773,13 +3878,26 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 2000
+  MaxStep: 3000
   startPoint: {fileID: 1308812068}
   goalPoint: {fileID: 1308812067}
+  floor: {fileID: 1308812070}
   moveSpeed: 1.5
   turnSpeed: 150
   maxDistance: 30
   randomStartYaw: 60
+  minGoalDistance: 1.5
+  maxGoalDistance: 3
+  requireLineOfSight: 1
+  wallMargin: 0.4
+  goalClearRadius: 0.3
+  obstacleTag: Obstacle
+  progressReward: 0.1
+  goalReward: 2
+  collisionPenalty: 0.5
+  stepPenalty: 0.0005
+  spinPenalty: 0.003
+  forwardBonus: 0.0005
 --- !u!114 &1730330298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3847,10 +3965,10 @@ MonoBehaviour:
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
     hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 5022602860645237092, guid: e170a53fdda70e5499591bf8853fc363, type: 3}
+  m_Model: {fileID: 0}
   m_InferenceDevice: 0
   m_BehaviorType: 0
-  m_BehaviorName: TurtleBotLearning
+  m_BehaviorName: TurtleBot
   TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
@@ -4048,13 +4166,26 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 2000
+  MaxStep: 3000
   startPoint: {fileID: 1084555356}
   goalPoint: {fileID: 1084555355}
+  floor: {fileID: 1084555358}
   moveSpeed: 1.5
   turnSpeed: 150
   maxDistance: 30
   randomStartYaw: 60
+  minGoalDistance: 1.5
+  maxGoalDistance: 3
+  requireLineOfSight: 1
+  wallMargin: 0.4
+  goalClearRadius: 0.3
+  obstacleTag: Obstacle
+  progressReward: 0.1
+  goalReward: 2
+  collisionPenalty: 0.5
+  stepPenalty: 0.0005
+  spinPenalty: 0.003
+  forwardBonus: 0.0005
 --- !u!114 &1938939269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4125,7 +4256,7 @@ MonoBehaviour:
   m_Model: {fileID: 0}
   m_InferenceDevice: 0
   m_BehaviorType: 0
-  m_BehaviorName: TurtleBotLearning
+  m_BehaviorName: TurtleBot
   TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
@@ -4446,13 +4577,26 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 2000
+  MaxStep: 3000
   startPoint: {fileID: 381102042}
   goalPoint: {fileID: 381102041}
+  floor: {fileID: 381102044}
   moveSpeed: 1.5
   turnSpeed: 150
   maxDistance: 30
   randomStartYaw: 60
+  minGoalDistance: 1.5
+  maxGoalDistance: 3
+  requireLineOfSight: 1
+  wallMargin: 0.4
+  goalClearRadius: 0.3
+  obstacleTag: Obstacle
+  progressReward: 0.1
+  goalReward: 2
+  collisionPenalty: 0.5
+  stepPenalty: 0.0005
+  spinPenalty: 0.003
+  forwardBonus: 0.0005
 --- !u!114 &2029468829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4520,10 +4664,10 @@ MonoBehaviour:
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
     hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 5022602860645237092, guid: 27212a007421aa546a270c5786fb1bcf, type: 3}
+  m_Model: {fileID: 0}
   m_InferenceDevice: 0
   m_BehaviorType: 0
-  m_BehaviorName: TurtleBotLearning
+  m_BehaviorName: TurtleBot
   TeamId: 0
   m_UseChildSensors: 1
   m_UseChildActuators: 1
