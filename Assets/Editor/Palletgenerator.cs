@@ -16,7 +16,7 @@ public class PalletGenerator : EditorWindow
     private const string RootName = "Obstacles";
     private const string ObstacleTag = "Obstacle";
 
-    private int count = 8;
+    private int count = 12;
     private float length = 1.2f;      // largo (m)
     private float width = 0.8f;       // ancho (m)
     private float baseHeight = 0.15f; // altura del palet de madera (m)
@@ -51,6 +51,59 @@ public class PalletGenerator : EditorWindow
         if (GUILayout.Button("Mostrar")) SetVisible(true);
         if (GUILayout.Button("Ocultar")) SetVisible(false);
         EditorGUILayout.EndHorizontal();
+
+        EditorGUILayout.Space();
+        EditorGUILayout.HelpBox(
+            "Orden: 1) Crear/regenerar. 2) Mostrar. 3) Coloca los palets a mano en UNA TrainingArea. " +
+            "4) Selecciona esa TrainingArea (o cualquier objeto dentro de ella) y pulsa el botón de abajo. " +
+            "Ojo: Crear/regenerar borra la disposición, no lo pulses después de colocarlos.",
+            MessageType.None);
+        if (GUILayout.Button("Copiar disposición de la área seleccionada a las demás"))
+        {
+            CopyLayoutFromSelected();
+        }
+    }
+
+    private void CopyLayoutFromSelected()
+    {
+        Transform source = Selection.activeTransform;
+        while (source != null && !source.name.StartsWith("TrainingArea")) source = source.parent;
+
+        if (source == null)
+        {
+            EditorUtility.DisplayDialog("Copiar disposición",
+                "Selecciona en la jerarquía una TrainingArea (o un objeto dentro de ella).", "OK");
+            return;
+        }
+
+        Transform srcRoot = source.Find(RootName);
+        if (srcRoot == null)
+        {
+            EditorUtility.DisplayDialog("Copiar disposición",
+                "La área seleccionada no tiene el objeto 'Obstacles'. Pulsa antes Crear / regenerar.", "OK");
+            return;
+        }
+
+        // Se sustituye el 'Obstacles' de cada otra área por un clon exacto del de la área origen
+        int areas = 0;
+        foreach (Transform area in FindAreas())
+        {
+            if (area == source) continue;
+
+            Transform old = area.Find(RootName);
+            if (old != null) Undo.DestroyObjectImmediate(old.gameObject);
+
+            GameObject clone = Instantiate(srcRoot.gameObject, area);
+            clone.name = RootName;
+            clone.transform.localPosition = srcRoot.localPosition;
+            clone.transform.localRotation = srcRoot.localRotation;
+            clone.transform.localScale = srcRoot.localScale;
+            Undo.RegisterCreatedObjectUndo(clone, "Copiar palets");
+            areas++;
+        }
+
+        EditorSceneManager.MarkAllScenesDirty();
+        Debug.Log($"[PalletGenerator] 'Obstacles' de '{source.name}' clonado en {areas} áreas.");
     }
 
     private static List<Transform> FindAreas()

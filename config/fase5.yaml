@@ -1,0 +1,71 @@
+behaviors:
+  # Debe coincidir con el "Behavior Name" de Behavior Parameters en Unity
+  TurtleBot:
+    trainer_type: ppo
+    hyperparameters:
+      batch_size: 1024
+      buffer_size: 10240
+      learning_rate: 3.0e-4
+      beta: 5.0e-3
+      epsilon: 0.2
+      lambd: 0.95
+      num_epoch: 3
+      learning_rate_schedule: linear
+    network_settings:
+      normalize: true
+      hidden_units: 256
+      num_layers: 2
+    reward_signals:
+      extrinsic:
+        gamma: 0.99
+        strength: 1.0
+    max_steps: 5000000
+    time_horizon: 128
+    summary_freq: 20000
+    keep_checkpoints: 5
+    checkpoint_interval: 100000
+
+environment_parameters:
+  # La navegación ya está aprendida: la meta se queda en la dificultad máxima
+  goal_min_dist: 1.5
+  goal_max_dist: 30.0
+  goal_line_of_sight: 0.0
+
+  # Número de palets activos por episodio (de los 12 posibles).
+  # Sube cuando la recompensa media supera el umbral de la lección actual.
+  num_obstacles:
+    curriculum:
+      - name: SinPalets
+        completion_criteria:
+          measure: reward
+          behavior: TurtleBot
+          signal_smoothing: true
+          min_lesson_length: 500
+          threshold: 2.8
+        value: 0.0
+      - name: Palets_2
+        completion_criteria:
+          measure: reward
+          behavior: TurtleBot
+          signal_smoothing: true
+          min_lesson_length: 500
+          threshold: 2.7
+        value: 2.0
+      - name: Palets_4
+        completion_criteria:
+          measure: reward
+          behavior: TurtleBot
+          signal_smoothing: true
+          min_lesson_length: 500
+          threshold: 2.6
+        value: 4.0
+      - name: Palets_6
+        completion_criteria:
+          measure: reward
+          behavior: TurtleBot
+          signal_smoothing: true
+          min_lesson_length: 500
+          threshold: 2.5
+        value: 6.0
+      - name: Palets_8
+        value: 8.0

@@ -1,0 +1,34 @@
+behaviors:
+  # Debe coincidir con el "Behavior Name" de Behavior Parameters en Unity
+  TurtleBot:
+    trainer_type: ppo
+    hyperparameters:
+      batch_size: 1024
+      buffer_size: 10240
+      learning_rate: 3.0e-4
+      beta: 5.0e-3
+      epsilon: 0.2
+      lambd: 0.95
+      num_epoch: 3
+      learning_rate_schedule: linear
+    network_settings:
+      normalize: true
+      hidden_units: 256
+      num_layers: 2
+    reward_signals:
+      extrinsic:
+        gamma: 0.99
+        strength: 1.0
+    max_steps: 3000000
+    time_horizon: 128
+    summary_freq: 20000
+    # Se guardan muchos más checkpoints para poder volver a uno bueno si el final empeora
+    keep_checkpoints: 50
+    checkpoint_interval: 100000
+
+environment_parameters:
+  # Sin curriculum: el robot ya sabe moverse con 8 palets, aquí solo cambia el premio de progreso
+  goal_min_dist: 1.5
+  goal_max_dist: 30.0
+  goal_line_of_sight: 0.0
+  num_obstacles: 8.0
