@@ -2451,12 +2451,12 @@ MonoBehaviour:
   maxDistance: 30
   randomStartYaw: 60
   minGoalDistance: 1.5
-  maxGoalDistance: 3
-  requireLineOfSight: 1
+  maxGoalDistance: 30
+  requireLineOfSight: 0
   wallMargin: 0.4
   goalClearRadius: 0.3
   obstacleTag: Obstacle
-  numObstacles: 4
+  numObstacles: 8
   startClearance: 1
   cellSize: 0.25
   robotRadius: 0.2
@@ -2537,7 +2537,7 @@ MonoBehaviour:
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
     hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 0}
+  m_Model: {fileID: 5022602860645237092, guid: 36fe4e99ad50309428ad7446ea360402, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: TurtleBot
@@ -7418,12 +7418,12 @@ MonoBehaviour:
   maxDistance: 30
   randomStartYaw: 60
   minGoalDistance: 1.5
-  maxGoalDistance: 3
-  requireLineOfSight: 1
+  maxGoalDistance: 30
+  requireLineOfSight: 0
   wallMargin: 0.4
   goalClearRadius: 0.3
   obstacleTag: Obstacle
-  numObstacles: 4
+  numObstacles: 8
   startClearance: 1
   cellSize: 0.25
   robotRadius: 0.2
@@ -7504,7 +7504,7 @@ MonoBehaviour:
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
     hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 0}
+  m_Model: {fileID: 5022602860645237092, guid: 5fb355277b5102f4d9d9abdc9a5441da, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: TurtleBot
@@ -16969,12 +16969,12 @@ MonoBehaviour:
   maxDistance: 30
   randomStartYaw: 60
   minGoalDistance: 1.5
-  maxGoalDistance: 3
-  requireLineOfSight: 1
+  maxGoalDistance: 30
+  requireLineOfSight: 0
   wallMargin: 0.4
   goalClearRadius: 0.3
   obstacleTag: Obstacle
-  numObstacles: 4
+  numObstacles: 0
   startClearance: 1
   cellSize: 0.25
   robotRadius: 0.2
@@ -17055,7 +17055,7 @@ MonoBehaviour:
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
     hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 0}
+  m_Model: {fileID: 5022602860645237092, guid: 5fb355277b5102f4d9d9abdc9a5441da, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: TurtleBot
@@ -27791,7 +27791,7 @@ MonoBehaviour:
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
     hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 0}
+  m_Model: {fileID: 5022602860645237092, guid: bd85494c8d7d59f4db7c78bd54cc725f, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: TurtleBot
@@ -27857,7 +27857,7 @@ Transform:
   m_GameObject: {fileID: 1148586919}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.10398, y: 0, z: -7.4636602}
+  m_LocalPosition: {x: -5.10398, y: 0, z: -7.4636602}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -27895,7 +27895,7 @@ MonoBehaviour:
   wallMargin: 0.4
   goalClearRadius: 0.3
   obstacleTag: Obstacle
-  numObstacles: 8
+  numObstacles: 0
   startClearance: 1
   cellSize: 0.25
   robotRadius: 0.2
@@ -34211,12 +34211,12 @@ MonoBehaviour:
   maxDistance: 30
   randomStartYaw: 60
   minGoalDistance: 1.5
-  maxGoalDistance: 3
-  requireLineOfSight: 1
+  maxGoalDistance: 30
+  requireLineOfSight: 0
   wallMargin: 0.4
   goalClearRadius: 0.3
   obstacleTag: Obstacle
-  numObstacles: 4
+  numObstacles: 0
   startClearance: 1
   cellSize: 0.25
   robotRadius: 0.2
@@ -34297,7 +34297,7 @@ MonoBehaviour:
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
     hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 0}
+  m_Model: {fileID: 5022602860645237092, guid: 8ef5fe00da366b64d9f799dac37514b5, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: TurtleBot
@@ -43177,12 +43177,12 @@ MonoBehaviour:
   maxDistance: 30
   randomStartYaw: 60
   minGoalDistance: 1.5
-  maxGoalDistance: 3
-  requireLineOfSight: 1
+  maxGoalDistance: 30
+  requireLineOfSight: 0
   wallMargin: 0.4
   goalClearRadius: 0.3
   obstacleTag: Obstacle
-  numObstacles: 4
+  numObstacles: 0
   startClearance: 1
   cellSize: 0.25
   robotRadius: 0.2
@@ -43263,7 +43263,7 @@ MonoBehaviour:
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
     hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 0}
+  m_Model: {fileID: 5022602860645237092, guid: e170a53fdda70e5499591bf8853fc363, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: TurtleBot
@@ -48231,12 +48231,12 @@ MonoBehaviour:
   maxDistance: 30
   randomStartYaw: 60
   minGoalDistance: 1.5
-  maxGoalDistance: 3
-  requireLineOfSight: 1
+  maxGoalDistance: 30
+  requireLineOfSight: 0
   wallMargin: 0.4
   goalClearRadius: 0.3
   obstacleTag: Obstacle
-  numObstacles: 4
+  numObstacles: 8
   startClearance: 1
   cellSize: 0.25
   robotRadius: 0.2
@@ -48317,7 +48317,7 @@ MonoBehaviour:
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
     hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 0}
+  m_Model: {fileID: 5022602860645237092, guid: f1c48d4e408e0684db1b1a44316c7d2f, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: TurtleBot
@@ -50838,12 +50838,12 @@ MonoBehaviour:
   maxDistance: 30
   randomStartYaw: 60
   minGoalDistance: 1.5
-  maxGoalDistance: 3
-  requireLineOfSight: 1
+  maxGoalDistance: 30
+  requireLineOfSight: 0
   wallMargin: 0.4
   goalClearRadius: 0.3
   obstacleTag: Obstacle
-  numObstacles: 4
+  numObstacles: 0
   startClearance: 1
   cellSize: 0.25
   robotRadius: 0.2
@@ -50924,7 +50924,7 @@ MonoBehaviour:
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
     hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 0}
+  m_Model: {fileID: 5022602860645237092, guid: 27212a007421aa546a270c5786fb1bcf, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: TurtleBot
